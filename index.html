@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle de Despesas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <section class="summary">
+        <h2>RESUMO</h2>
+        <div class="total-label">Soma total</div>
+        <div class="total-value">R$ 0,00</div>
+      </section>
+
+      <section class="categories">
+        <h3>Totais por categoria</h3>
+        <div class="category-row"><span>Alimentação</span><strong>R$ 0,00</strong></div>
+        <div class="category-row"><span>Transporte</span><strong>R$ 0,00</strong></div>
+        <div class="category-row"><span>Lazer</span><strong>R$ 0,00</strong></div>
+        <div class="category-row"><span>Saúde</span><strong>R$ 0,00</strong></div>
+        <div class="category-row"><span>Cartão de Crédito</span><strong>R$ 0,00</strong></div>
+        <div class="category-row"><span>Outros</span><strong>R$ 0,00</strong></div>
+      </section>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-spacer"></div>
+        <button class="print-button" type="button" onclick="window.print()" aria-label="Imprimir">
+          <span class="printer-icon" aria-hidden="true">▣</span>
+          <span>Print</span>
+        </button>
+      </header>
+
+      <section class="panel expense-form">
+        <h1>Nova Despesa</h1>
+        <form>
+          <label for="title">Título</label>
+          <input id="title" name="title" type="text" placeholder="Ex: Mercado do mês">
+
+          <label for="amount">Valor</label>
+          <input id="amount" name="amount" type="number" min="0" step="0.01" placeholder="Ex: 150,00">
+
+          <label for="category">Categoria</label>
+          <select id="category" name="category">
+            <option value="" selected disabled>Selecione uma categoria</option>
+            <option>Alimentação</option>
+            <option>Transporte</option>
+            <option>Lazer</option>
+            <option>Saúde</option>
+            <option>Cartão de Crédito</option>
+            <option>Outros</option>
+          </select>
+
+          <button class="add-button" type="submit">Adicionar despesa</button>
+        </form>
+      </section>
+
+      <section class="panel expenses">
+        <h2>Despesas</h2>
+        <div class="empty-state">Nenhuma despesa cadastrada ainda.</div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
